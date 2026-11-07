@@ -2,169 +2,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Telemetry USMLE medical education and board exam preparation.">
-  <title>Telemetry USMLE | Medical Education</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Telemetry USMLE medical education and board exam preparation.">
+<title>Telemetry USMLE | Telemetry MedLogic</title>
+
+<style>
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #26134f;
+  background: #f5efff;
+}
+
+header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 5%;
+  background: rgba(255,255,255,.90);
+}
+
+.brand {
+  color: #44227e;
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 26px;
+}
+
+nav a {
+  color: #321a5d;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #8653cb;
+}
+
+.medical-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.medical-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 0;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  isolation: isolate;
+}
+
+.medical-background {
+  z-index: -2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(237,222,255,.15) 0%,
+      rgba(245,238,255,.80) 44%,
+      rgba(250,246,255,.97) 80%
+    );
+}
+
+.hero-content {
+  width: min(850px, 100%);
+  padding: 48px 34px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255,255,255,.73);
+  box-shadow: 0 20px 70px rgba(49,24,95,.12);
+  backdrop-filter: blur(12px);
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #7040b1;
+  font-weight: 800;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+
+.tagline {
+  font-size: clamp(21px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 18px;
+  color: #5d5271;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary {
+  background: #6936ac;
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: #6936ac;
+  border: 1px solid #6936ac;
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #eee4fa;
+  color: #594777;
+}
+
+footer a {
+  color: #6936ac;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .medical-background {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .hero {
+    min-height: 850px;
+    padding: 40px 16px;
+  }
+
+  .hero-content {
+    padding: 32px 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <a class="brand" href="index.html">✦ Telemetry USMLE</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
+<header>
+  <a class="brand" href="index.html">✦ Telemetry USMLE</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Telemetry MedLogic</div>
-        <h1>Learn medicine. Prepare for what comes next.</h1>
-        <p class="lead">
-          Telemetry USMLE brings medical knowledge,
-          clinical reasoning, and board exam preparation
-          together in one focused learning experience.
-        </p>
-        <p>
-          Explore Step 1 and Step 2 CK study topics,
-          clinical questions, and medical illustrations.
-        </p>
-        <a class="btn" href="support.html">Explore Telemetry USMLE</a>
-      </div>
-      <div>
-        <img
-          src="medical-hero.webp"
-          alt="Modern medical technology and interventional radiology"
-          style="width:100%;border-radius:24px"
-        >
-      </div>
-    </section>
+<main>
+<section class="hero">
 
-    <section>
-      <div class="eyebrow">Medical education</div>
-      <h2>From foundational science to clinical practice</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>USMLE Step 1</h3>
-          <p>
-            Strengthen foundational medical knowledge
-            through integrated clinical learning.
-          </p>
-        </article>
-        <article class="card">
-          <h3>USMLE Step 2 CK</h3>
-          <p>
-            Practice clinical reasoning, diagnosis,
-            and management decisions.
-          </p>
-        </article>
-        <article class="card">
-          <h3>Medical Imaging</h3>
-          <p>
-            Connect anatomy and disease processes
-            with radiology and clinical illustrations.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section style="padding-top:70px">
-      <div class="eyebrow">The future of medicine</div>
-      <h2>Innovation in every specialty</h2>
-      <p class="lead">
-        Robotic systems, vascular interventions,
-        angiography, ECG telemetry, emergency medicine,
-        and diagnostic imaging are shaping modern care.
-      </p>
-      <img
-        src="vascular-banner.webp"
-        alt="Vascular intervention and advanced medical imaging"
-        class="feature-image"
-      >
-      <p>
-        Telemetry USMLE focuses on medical education
-        while celebrating the technologies transforming
-        clinical practice.
-      </p>
-    </section>
-
-<section class="medical-gallery">
-  <div class="eyebrow">Explore Modern Medicine</div>
-  <h2>Technology Transforming Healthcare</h2>
-  <p class="lead">
-    Explore the clinical environments, diagnostic
-    technologies, and innovations shaping medicine.
-  </p>
-
-  <div class="grid">
-    <article class="card">
-      <img src="doctor-clinical-care.png"
-           alt="Doctor providing clinical care"
-           class="feature-image" loading="lazy">
-      <h3>Clinical Care</h3>
-      <p>Physicians, patients, and clinical reasoning.</p>
-    </article>
-
-    <article class="card">
-      <img src="ecg-telemetry.png"
-           alt="ECG telemetry monitor"
-           class="feature-image" loading="lazy">
-      <h3>ECG & Telemetry</h3>
-      <p>Cardiac monitoring and critical care.</p>
-    </article>
-
-    <article class="card">
-      <img src="robotic-surgery.png"
-           alt="Robotic surgery system"
-           class="feature-image" loading="lazy">
-      <h3>Robotic Medicine</h3>
-      <p>Technology-assisted surgical procedures.</p>
-    </article>
-
-    <article class="card">
-      <img src="emergency-ambulance.png"
-           alt="Emergency medical responders"
-           class="feature-image" loading="lazy">
-      <h3>Emergency Medicine</h3>
-      <p>Acute care and emergency response.</p>
-    </article>
-
-    <article class="card">
-      <img src="interventional-radiology.png"
-           alt="Interventional radiology procedure"
-           class="feature-image" loading="lazy">
-      <h3>Interventional Radiology</h3>
-      <p>Angiography and vascular interventions.</p>
-    </article>
-
-    <article class="card">
-      <img src="ct-mri-imaging.png"
-           alt="CT and MRI imaging equipment"
-           class="feature-image" loading="lazy">
-      <h3>Diagnostic Imaging</h3>
-      <p>CT, MRI, and advanced radiology.</p>
-    </article>
+  <div class="medical-background" aria-hidden="true">
+    <img src="medical-hero.webp" alt="">
+    <img src="robotic-surgery.png" alt="">
+    <img src="ecg-telemetry.png" alt="">
+    <img src="ct-mri-imaging.png" alt="">
+    <img src="doctor-clinical-care.png" alt="">
+    <img src="interventional-radiology.png" alt="">
+    <img src="emergency-ambulance.png" alt="">
+    <img src="vascular-banner.webp" alt="">
   </div>
+
+  <div class="hero-content">
+    <div class="eyebrow">Telemetry MedLogic</div>
+
+    <h1>Telemetry USMLE</h1>
+
+    <p class="tagline">
+      Medical knowledge. Clinical reasoning.<br>
+      The future of medicine.
+    </p>
+
+    <p class="description">
+      A modern medical education application
+      for USMLE preparation.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="support.html">
+        Learn More
+      </a>
+
+      <a class="btn secondary"
+         href="mailto:telemetrymedlogic@gmail.com">
+        Contact Support
+      </a>
+    </div>
+  </div>
+
 </section>
+</main>
 
-    <section style="padding-top:50px">
-      <div class="card">
-        <h2>Questions or feedback?</h2>
-        <p>
-          Contact our team for help with Telemetry USMLE.
-        </p>
-        <a class="btn" href="support.html">Contact Support</a>
-      </div>
-    </section>
-  </main>
+<footer>
+  © 2026 Telemetry USMLE ·
+  <a href="support.html">Support</a> ·
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
 
-  <footer>
-    © 2026 Telemetry USMLE ·
-    <a href="support.html">Support</a> ·
-    <a href="privacy.html">Privacy Policy</a>
-  </footer>
 </body>
 </html>
