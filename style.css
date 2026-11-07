@@ -1,1 +1,140 @@
-:root{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#29243b;background:#faf8ff}*{box-sizing:border-box}body{margin:0;line-height:1.65}header{background:#f0eafa;border-bottom:1px solid #e4dbf2;padding:20px max(6%,calc((100% - 1080px)/2));display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}a{color:#6747a3}nav a{margin-left:20px;text-decoration:none;font-weight:600}.brand{font-weight:800;color:#493579;text-decoration:none;font-size:21px}main{max-width:900px;margin:auto;padding:64px 24px}.hero{padding:35px 0 55px}.eyebrow{color:#7353ad;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:13px}h1{font-size:clamp(36px,6vw,60px);line-height:1.12;margin:15px 0 20px}h2{margin-top:38px;font-size:24px}p,li{font-size:17px}.lead{font-size:21px;color:#5b526d;max-width:690px}.pill{display:inline-block;background:#e7f5ed;border-radius:20px;padding:5px 14px;color:#245f4d;font-size:13px;font-weight:700}.button{display:inline-block;background:#7457ae;color:white;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:700;margin:14px 12px 0 0}.button.secondary{background:#efe8fa;color:#594088}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:30px}.card{background:white;border:1px solid #e9e1f2;border-radius:18px;padding:23px}.note{background:#fff5e8;border-left:4px solid #dfad6c;padding:15px 20px;border-radius:6px}footer{padding:28px 6%;border-top:1px solid #e4dbf2;text-align:center;color:#6b617a;font-size:14px}footer a{margin:0 10px}@media(max-width:600px){nav a{margin:0 12px 0 0}main{padding:40px 20px}}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #24164a;
+  --purple: #6538a8;
+  --violet: #8052c5;
+  --soft: #f7f3ff;
+  --line: #e9e0f5;
+  --muted: #625b73;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fcfaff;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.65;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 6%;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 25px; }
+
+nav a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover { color: var(--violet); }
+
+main {
+  width: min(1160px, 90%);
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+h1, h2, h3 {
+  font-family: Manrope, sans-serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.eyebrow {
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+  padding: 55px 0;
+}
+
+.hero img, .feature-image {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(55, 30, 100, .06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.button, .btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 12px;
+  background: var(--purple);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover, .btn:hover { background: #4b2687; }
+
+.note {
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--soft);
+}
+
+footer {
+  margin-top: 60px;
+  padding: 35px 6%;
+  text-align: center;
+  background: #f2ebfc;
+  color: var(--muted);
+}
+
+footer a { color: var(--purple); }
+
+@media (max-width: 760px) {
+  header { flex-direction: column; gap: 15px; }
+  nav { flex-wrap: wrap; justify-content: center; }
+  .hero { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  main { padding: 30px 0; }
+}
