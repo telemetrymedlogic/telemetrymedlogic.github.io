@@ -158,6 +158,122 @@
       opacity: 0.9;
     }
 
+    .home-details {
+      padding: clamp(48px, 7vw, 96px) clamp(16px, 5vw, 64px);
+      background: linear-gradient(180deg, #f9f5ff 0%, #f1e8fb 100%);
+    }
+
+    .home-section {
+      max-width: 1100px;
+      margin-inline: auto;
+    }
+
+    .section-intro {
+      text-align: center;
+      margin: 0 auto 32px;
+    }
+
+    .home-section h2 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .section-intro p,
+    .download-copy p {
+      color: #5d5271;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      margin: 14px auto 0;
+      max-width: 54ch;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: clamp(20px, 3vw, 32px);
+      border: 1px solid #e3d6f2;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(49,24,95,0.06);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #f0e5fc;
+      color: #6936ac;
+    }
+
+    .feature-card h3 {
+      margin: 16px 0 8px;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: #5d5271;
+      line-height: 1.65;
+    }
+
+    .download-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: clamp(40px, 6vw, 72px);
+      padding: clamp(24px, 5vw, 56px);
+      border: 1px solid #ddc9f1;
+      border-radius: 26px;
+      background: linear-gradient(125deg, #fff 0%, #efe0fb 100%);
+      box-shadow: 0 14px 36px rgba(49,24,95,0.08);
+    }
+
+    .download-copy p {
+      margin-inline: 0;
+    }
+
+    .store-status {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 14px;
+      padding: 12px 16px;
+      border: 1px solid #dac5f1;
+      border-radius: 14px;
+      background: #fff;
+      color: #44227e;
+      font-weight: 700;
+    }
+
+    .store-status small {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eee2fc;
+      color: #542c87;
+      font-size: 0.8125rem;
+    }
+
+    a.store-status:hover {
+      background: #f9f3ff;
+    }
+
+    @media (max-width: 760px) {
+      .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
     footer {
       text-align: center;
       padding: 22px;
@@ -233,7 +349,7 @@
         </p>
 
         <div class="actions">
-          <a class="btn primary" href="support.html">
+          <a class="btn primary" href="#explore">
             Learn More
           </a>
 
@@ -245,6 +361,59 @@
       </div>
 
     </section>
+
+    <div class="home-details">
+      <section id="explore" class="home-section" aria-labelledby="explore-heading">
+        <div class="section-intro">
+          <h2 id="explore-heading">Explore Telemetry USMLE</h2>
+          <p>Practice clinical reasoning, work through difficult concepts, and keep your study materials together.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 6v14M3 4h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5v14h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3z"/>
+                <path d="M6 9h3m-3 4h3m6-4h3m-3 4h3"/>
+              </svg>
+            </div>
+            <h3>Step 1 and Step 2 CK Question Banks</h3>
+            <p>Practice with clinical vignettes, then review full explanations for correct and incorrect choices and the educational objective for each question.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3 2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z"/>
+                <path d="M20 3v4m-2-2h4"/>
+              </svg>
+            </div>
+            <h3>AI Study Assistant</h3>
+            <p>On supported devices, use on-device AI to explain selected study material and ask follow-up questions as you review.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <path d="M9 12h6m-6 3h4"/>
+              </svg>
+            </div>
+            <h3>My Private Library</h3>
+            <p>Import your own PDFs and supported personal study files from Files. Read them in your private library, bookmark pages, and pick up where you left off.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="download" class="home-section download-panel" aria-labelledby="download-heading">
+        <div class="download-copy">
+          <h2 id="download-heading">Get Telemetry USMLE</h2>
+          <p>The official download link will appear here when the app is available on the App Store.</p>
+        </div>
+        <!-- At launch, replace this span with an a.store-status pointing to the official Apple App Store URL. -->
+        <span class="store-status">Apple App Store <small>Coming Soon</small></span>
+      </section>
+    </div>
   </main>
 
   <footer>
