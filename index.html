@@ -2,265 +2,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Telemetry USMLE medical education and board exam preparation.">
-<title>Telemetry USMLE | Telemetry MedLogic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Telemetry USMLE medical education and board exam preparation.">
+  <title>Telemetry USMLE | Telemetry MedLogic</title>
 
-<style>
-* { box-sizing: border-box; }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-html, body {
-  margin: 0;
-  min-height: 100%;
-}
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #26134f;
-  background: #f5efff;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #26134f;
+      background: #f5efff;
+    }
 
-header {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 24px 5%;
-  background: rgba(255,255,255,.90);
-}
+    header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 5%;
+      background: rgba(255,255,255,0.93);
+    }
 
-.brand {
-  color: #44227e;
-  font-size: 24px;
-  font-weight: 800;
-  text-decoration: none;
-}
+    .brand {
+      color: #44227e;
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-nav {
-  display: flex;
-  gap: 26px;
-}
+    nav {
+      display: flex;
+      gap: 26px;
+    }
 
-nav a {
-  color: #321a5d;
-  text-decoration: none;
-  font-weight: 700;
-}
+    nav a {
+      color: #321a5d;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-nav a:hover {
-  color: #8653cb;
-}
+    nav a:hover {
+      color: #8653cb;
+    }
 
-.medical-background {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 85px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      isolation: isolate;
+      overflow: hidden;
+    }
 
-.medical-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  min-height: 0;
-}
+    .medical-background {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("medical-hero.webp");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
 
-.hero {
-  position: relative;
-  min-height: calc(100vh - 85px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 24px;
-  isolation: isolate;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(245,238,255,0.12) 0%,
+        rgba(245,238,255,0.25) 55%,
+        rgba(245,238,255,0.55) 100%
+      );
+    }
 
-.medical-background {
-  z-index: -2;
-}
+    .hero-content {
+      width: min(820px, 100%);
+      padding: 48px 34px;
+      text-align: center;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.80);
+      box-shadow: 0 20px 70px rgba(49,24,95,0.15);
+      backdrop-filter: blur(12px);
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(237,222,255,.15) 0%,
-      rgba(245,238,255,.80) 44%,
-      rgba(250,246,255,.97) 80%
-    );
-}
+    .eyebrow {
+      font-size: 14px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7040b1;
+      font-weight: 800;
+    }
 
-.hero-content {
-  width: min(850px, 100%);
-  padding: 48px 34px;
-  text-align: center;
-  border-radius: 30px;
-  background: rgba(255,255,255,.73);
-  box-shadow: 0 20px 70px rgba(49,24,95,.12);
-  backdrop-filter: blur(12px);
-}
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
 
-.eyebrow {
-  font-size: 14px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: #7040b1;
-  font-weight: 800;
-}
+    .tagline {
+      font-size: clamp(21px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1.4;
+    }
 
-h1 {
-  margin: 18px 0;
-  font-size: clamp(44px, 7vw, 88px);
-  line-height: 1.1;
-  letter-spacing: -.04em;
-}
+    .description {
+      font-size: 18px;
+      color: #5d5271;
+      line-height: 1.6;
+    }
 
-.tagline {
-  font-size: clamp(21px, 3vw, 32px);
-  font-weight: 700;
-  line-height: 1.4;
-}
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
 
-.description {
-  font-size: 18px;
-  color: #5d5271;
-}
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-.actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 30px;
-}
+    .primary {
+      background: #6936ac;
+      color: white;
+    }
 
-.btn {
-  padding: 14px 28px;
-  border-radius: 14px;
-  font-weight: 700;
-  text-decoration: none;
-}
+    .secondary {
+      background: white;
+      color: #6936ac;
+      border: 1px solid #6936ac;
+    }
 
-.primary {
-  background: #6936ac;
-  color: white;
-}
+    .btn:hover {
+      opacity: 0.9;
+    }
 
-.secondary {
-  background: white;
-  color: #6936ac;
-  border: 1px solid #6936ac;
-}
+    footer {
+      text-align: center;
+      padding: 22px;
+      background: #eee4fa;
+      color: #594777;
+    }
 
-footer {
-  text-align: center;
-  padding: 22px;
-  background: #eee4fa;
-  color: #594777;
-}
+    footer a {
+      color: #6936ac;
+    }
 
-footer a {
-  color: #6936ac;
-}
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        padding: 18px;
+      }
 
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    padding: 18px;
-  }
+      nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-  nav {
-    gap: 20px;
-  }
+      .hero {
+        min-height: 750px;
+        padding: 40px 16px;
+      }
 
-  .medical-background {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
+      .medical-background {
+        background-position: center center;
+      }
 
-  .hero {
-    min-height: 850px;
-    padding: 40px 16px;
-  }
+      .hero-content {
+        padding: 32px 20px;
+      }
 
-  .hero-content {
-    padding: 32px 20px;
-  }
-
-  .description {
-    font-size: 16px;
-  }
-}
-</style>
+      .description {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <a class="brand" href="index.html">✦ Telemetry USMLE</a>
-  <nav aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="support.html">Support</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
-</header>
+  <header>
+    <a class="brand" href="index.html">✦ Telemetry USMLE</a>
 
-<main>
-<section class="hero">
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
 
-  <div class="medical-background" aria-hidden="true">
-    <img src="medical-hero.webp" alt="">
-    <img src="robotic-surgery.png" alt="">
-    <img src="ecg-telemetry.png" alt="">
-    <img src="ct-mri-imaging.png" alt="">
-    <img src="doctor-clinical-care.png" alt="">
-    <img src="interventional-radiology.png" alt="">
-    <img src="emergency-ambulance.png" alt="">
-    <img src="vascular-banner.webp" alt="">
-  </div>
+  <main>
+    <section class="hero">
 
-  <div class="hero-content">
-    <div class="eyebrow">Telemetry MedLogic</div>
+      <div class="medical-background" aria-hidden="true"></div>
 
-    <h1>Telemetry USMLE</h1>
+      <div class="hero-content">
+        <div class="eyebrow">Telemetry MedLogic</div>
 
-    <p class="tagline">
-      Medical knowledge. Clinical reasoning.<br>
-      The future of medicine.
-    </p>
+        <h1>Telemetry USMLE</h1>
 
-    <p class="description">
-      A modern medical education application
-      for USMLE preparation.
-    </p>
+        <p class="tagline">
+          Medical knowledge. Clinical reasoning.<br>
+          The future of medicine.
+        </p>
 
-    <div class="actions">
-      <a class="btn primary" href="support.html">
-        Learn More
-      </a>
+        <p class="description">
+          A modern medical education application
+          for USMLE preparation.
+        </p>
 
-      <a class="btn secondary"
-         href="mailto:telemetrymedlogic@gmail.com">
-        Contact Support
-      </a>
-    </div>
-  </div>
+        <div class="actions">
+          <a class="btn primary" href="support.html">
+            Learn More
+          </a>
 
-</section>
-</main>
+          <a class="btn secondary"
+             href="mailto:telemetrymedlogic@gmail.com">
+            Contact Support
+          </a>
+        </div>
+      </div>
 
-<footer>
-  © 2026 Telemetry USMLE ·
-  <a href="support.html">Support</a> ·
-  <a href="privacy.html">Privacy Policy</a>
-</footer>
+    </section>
+  </main>
 
+  <footer>
+    © 2026 Telemetry USMLE ·
+    <a href="support.html">Support</a> ·
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
 </body>
 </html>
