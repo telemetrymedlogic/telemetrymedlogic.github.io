@@ -5,136 +5,203 @@
   --ink: #24164a;
   --purple: #6538a8;
   --violet: #8052c5;
-  --soft: #f7f3ff;
-  --line: #e9e0f5;
   --muted: #625b73;
+  --line: #e9e0f5;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
+  min-height: 100vh;
   color: var(--ink);
-  background: #fcfaff;
   font-family: 'DM Sans', sans-serif;
   line-height: 1.65;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248,243,255,0.84),
+      rgba(248,243,255,0.90)
+    ),
+    url("medical-hero.webp") center center / cover
+    fixed no-repeat;
+
+  background-color: #f7f1ff;
 }
 
+/* Navigation */
+
 header {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   padding: 22px 6%;
-  background: white;
+  background: rgba(255,255,255,0.94);
   border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  font-family: Manrope, sans-serif;
-  font-weight: 800;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.25rem;
+  font-weight: 800;
   color: var(--purple);
   text-decoration: none;
 }
 
-nav { display: flex; gap: 25px; }
+nav {
+  display: flex;
+  gap: 25px;
+}
 
 nav a {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 
-nav a:hover { color: var(--violet); }
+nav a:hover {
+  color: var(--violet);
+}
+
+/* Main content */
 
 main {
-  width: min(1160px, 90%);
-  margin: 0 auto;
-  padding: 55px 0;
+  width: min(1000px, 92%);
+  margin: 45px auto;
+  padding: 48px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.90);
+  box-shadow: 0 20px 70px rgba(49,24,95,0.12);
+  backdrop-filter: blur(12px);
 }
 
 h1, h2, h3 {
-  font-family: Manrope, sans-serif;
-  line-height: 1.2;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.25;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); }
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin: 24px 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-top: 36px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 24px;
+}
+
+p {
+  margin-bottom: 18px;
+}
 
 .lead {
   font-size: 1.15rem;
   color: var(--muted);
-  max-width: 700px;
+  max-width: 760px;
 }
 
 .eyebrow {
   color: var(--purple);
   text-transform: uppercase;
-  letter-spacing: .13em;
-  font-size: .8rem;
+  letter-spacing: 0.13em;
+  font-size: 0.8rem;
   font-weight: 800;
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  align-items: center;
-  padding: 55px 0;
-}
-
-.hero img, .feature-image {
-  width: 100%;
-  border-radius: 24px;
-  object-fit: cover;
-}
+/* Support cards */
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.92);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 28px;
-  box-shadow: 0 12px 35px rgba(55, 30, 100, .06);
+  margin: 28px 0;
+  box-shadow: 0 12px 35px rgba(55,30,100,0.06);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.button, .btn {
-  display: inline-block;
-  padding: 13px 25px;
-  border-radius: 12px;
-  background: var(--purple);
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.button:hover, .btn:hover { background: #4b2687; }
+/* Privacy notices */
 
 .note {
-  padding: 18px;
-  border-radius: 12px;
-  background: var(--soft);
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: #f3edfc;
+  border: 1px solid #e7daf7;
 }
 
+/* Links */
+
+main a {
+  color: var(--purple);
+  overflow-wrap: anywhere;
+}
+
+main a:hover {
+  color: #4b2687;
+}
+
+/* Footer */
+
 footer {
-  margin-top: 60px;
-  padding: 35px 6%;
+  padding: 28px 6%;
   text-align: center;
-  background: #f2ebfc;
+  background: rgba(242,235,252,0.94);
   color: var(--muted);
 }
 
-footer a { color: var(--purple); }
+footer a {
+  color: var(--purple);
+}
+
+/* Mobile */
 
 @media (max-width: 760px) {
-  header { flex-direction: column; gap: 15px; }
-  nav { flex-wrap: wrap; justify-content: center; }
-  .hero { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: 1fr; }
-  main { padding: 30px 0; }
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  main {
+    width: 94%;
+    margin: 22px auto;
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
 }
